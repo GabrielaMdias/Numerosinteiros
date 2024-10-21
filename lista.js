@@ -1,10 +1,14 @@
 let numeros = [];
+let indice = 0;
 
 document.getElementById('insertBtn').onclick = () => {
     let valorInserido = parseInt(document.getElementById('numberInput').value);
-    if (!isNaN(valorInserido)) numeros.push(valorInserido);
+    if (!isNaN(valorInserido)) {
+        numeros[indice] = valorInserido; 
+        indice++; 
+    }
     document.getElementById('numberInput').value = '';
-    document.getElementById('original').textContent = numeros.join(',');
+    document.getElementById('original').textContent = numeros.join(', ');
 };
 
 document.getElementById('sortBtn').onclick = () => {
